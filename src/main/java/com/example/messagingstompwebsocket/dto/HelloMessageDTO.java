@@ -1,13 +1,13 @@
-package com.example.messagingstompwebsocket;
+package com.example.messagingstompwebsocket.dto;
 
-public class HelloMessage {
+public class HelloMessageDTO {
 
 	private String name;
 
-	public HelloMessage() {
+	public HelloMessageDTO() {
 	}
 
-	public HelloMessage(String name) {
+	public HelloMessageDTO(String name) {
 		this.name = name;
 	}
 

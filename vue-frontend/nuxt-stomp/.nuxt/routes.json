@@ -1,0 +1,9 @@
+[
+  {
+    "name": "index",
+    "path": "/",
+    "component": "c:\\\\pub\\\\gs-messaging-stomp-websocket\\\\vue-frontend\\\\nuxt-stomp\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_dca35212"
+  }
+]

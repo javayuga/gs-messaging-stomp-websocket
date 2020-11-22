@@ -9,6 +9,8 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 
+import com.example.messagingstompwebsocket.dto.ContentHolderDTO;
+import com.example.messagingstompwebsocket.dto.HelloMessageDTO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -63,12 +65,12 @@ public class GreetingIntegrationTests {
 				session.subscribe("/topic/greetings", new StompFrameHandler() {
 					@Override
 					public Type getPayloadType(StompHeaders headers) {
-						return Greeting.class;
+						return ContentHolderDTO.class;
 					}
 
 					@Override
 					public void handleFrame(StompHeaders headers, Object payload) {
-						Greeting greeting = (Greeting) payload;
+						ContentHolderDTO greeting = (ContentHolderDTO) payload;
 						try {
 							assertEquals("Hello, Spring!", greeting.getContent());
 						} catch (Throwable t) {
@@ -80,7 +82,7 @@ public class GreetingIntegrationTests {
 					}
 				});
 				try {
-					session.send("/app/hello", new HelloMessage("Spring"));
+					session.send("/app/hello", new HelloMessageDTO("Spring"));
 				} catch (Throwable t) {
 					failure.set(t);
 					latch.countDown();

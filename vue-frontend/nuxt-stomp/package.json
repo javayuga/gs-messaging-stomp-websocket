@@ -1,0 +1,14 @@
+{
+  "name": "nuxt-stomp",
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "start": "nuxt start"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "bootstrap-vue": "^2.19.0",
+    "nuxt": "^2.14.7"
+  }
+}

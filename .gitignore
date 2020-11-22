@@ -1,2 +1,4 @@
 build
 target
+/.idea
+/vue-frontend/nuxt-stomp/node_modules

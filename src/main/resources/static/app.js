@@ -21,6 +21,9 @@ function connect() {
         stompClient.subscribe('/topic/greetings', function (greeting) {
             showGreeting(JSON.parse(greeting.body).content);
         });
+        stompClient.subscribe('/topic/rand-number', function (greeting) {
+            showRandNumber(JSON.parse(greeting.body).content);
+        });
     });
 }
 
@@ -38,6 +41,10 @@ function sendName() {
 
 function showGreeting(message) {
     $("#greetings").append("<tr><td>" + message + "</td></tr>");
+}
+
+function showRandNumber(message) {
+    $("#rand-numbers").append("<tr><td>" + message + "</td></tr>");
 }
 
 $(function () {
